@@ -19,6 +19,10 @@ const Circle = styled.div`
 		fill: none;
 		stroke: #4d80e4;
 		stroke-width: 5px;
+		//از بردر بریده بریده شده استفاده کردم و یک بریده بزرگ که دقیقا اندازه محیط دایرس نشون میدم
+		//محیط دایره ۳۰۲ که از ضرب قطر در عدد پی به دست میاد
+		//محیط دایره در درصد دریافتی ضرب شده و از کل محیط کم شده
+		// که در صفر درصد فاصله بین بریده ها کل محیط دایرس و در صد درصد فاصله بریده ها صفر هست
 		stroke-dashoffset: ${(p) => 302 - (p.percentage / 100) * 302};
 		stroke-dasharray: 302 302;
 	}
@@ -34,11 +38,13 @@ const Icons = styled.div`
 	transform: translateX(-50%) translateY(-50%) scale(1);
 	cursor: pointer;
 
+	//فقط آیکون تیک خورده انیمیت داره که موقع ظاهر شدن اجرا بشه
 	.animate {
 		animation: ${appear} 0.5s linear;
 	}
 `;
 
+//کامپوننت یک عدد درصد دریافت میکنه و یه فانکشن که موقع کلیک شدن صداش کنه
 const UploadButton = ({ percentage, handleClick }) => {
 	return (
 		<Container onClick={handleClick}>

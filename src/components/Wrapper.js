@@ -14,6 +14,11 @@ const Container = styled.div`
 		width: 100px;
 		z-index: 2;
 	}
+	p {
+		height: 1rem;
+		margin: 0.25rem 0;
+		direction: rtl;
+	}
 `;
 
 const Wrapper = () => {
@@ -44,6 +49,10 @@ const Wrapper = () => {
 	return (
 		<Container>
 			<UploadButton percentage={percentage} handleClick={handleClick} />
+			<p>
+				{counting && "درحال بارگزاری..."}
+				{percentage === 100 && "بارگزاری با موفقیت انجام شد."}
+			</p>
 			<p>{persian(percentage) + "%"}</p>
 			<input
 				type="range"

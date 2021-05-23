@@ -11,3 +11,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	background-color: #4d7fe41e;
 }
+* {
+	margin: 0;
+	padding: 0;
+}
